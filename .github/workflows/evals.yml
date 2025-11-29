@@ -24,7 +24,7 @@ jobs:
     - name: Run vowel on all YAML files in evals directory
       run: |
         echo "Starting vowel evaluations..."
-        YAML_FILES=$(find evals -name "*.yaml" -type f)
+        YAML_FILES=$(find evals -name "*.yml" -type f)
         
         if [ -z "$YAML_FILES" ]; then
           echo "No YAML files found in evals directory"
