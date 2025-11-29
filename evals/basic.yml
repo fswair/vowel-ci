@@ -1,0 +1,11 @@
+src.functions.get_length:
+  evals:
+    IsInteger:
+      type: int
+  dataset:
+    - case:
+        input: []
+        expected: 0
+    - case:
+        input: [1, 2]
+        expected: 2

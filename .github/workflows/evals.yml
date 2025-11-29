@@ -1,0 +1,32 @@
+name: Run Vowel Evals
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  vowel-evals:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install vowel package
+      run: |
+        pip install vowel
+    
+    - name: Run vowel on all YAML files in evals directory
+      run: |
+        for yaml_file in evals/*.yaml; do
+          if [ -f "$yaml_file" ]; then
+            echo "Running vowel on: $yaml_file"
+            vowel "$yaml_file" -v
+          fi
+        done
+      shell: bash
