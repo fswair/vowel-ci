@@ -19,7 +19,7 @@ jobs:
     
     - name: Install vowel package
       run: |
-        pip install vowel
+        pip install vowel dotenv
     
     - name: Run vowel on all YAML files in evals directory
       run: |
