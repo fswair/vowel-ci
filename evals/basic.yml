@@ -1,7 +1,7 @@
 src.functions.get_length:
   evals:
     IsInteger:
-      type: int
+      type: list
   dataset:
     - case:
         input: []
